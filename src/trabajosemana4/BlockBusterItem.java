@@ -19,7 +19,7 @@ public abstract class BlockBusterItem {
     
     @Override
     public String toString(){
-        return "Nombre: "+nombre +"\nCodigo: "+codigo+"\nPrecio de Renta: "+precioRenta;
+        return "Nombre: "+nombre +"\nCodigo: "+codigo+"\nPrecio de Renta: "+precioRenta +"\nFecha de Renta: "+fecha;
     }
     
     abstract double pagoRenta(int dias);
