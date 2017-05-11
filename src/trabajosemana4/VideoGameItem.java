@@ -20,7 +20,7 @@ public final class VideoGameItem extends BlockBusterItem {
 
     @Override
     double pagoRenta(int dias) {
-        return 0;
+        return dias*precioRenta;
     }
     
     
