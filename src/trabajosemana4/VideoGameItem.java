@@ -15,7 +15,7 @@ public final class VideoGameItem extends BlockBusterItem {
     
     @Override
     public String toString() {
-        return super.toString() +"\nNombre de la consola : "+nombreConsola+" Game";
+        return super.toString() +"\nNombre de la consola : "+nombreConsola;
     }
 
     @Override
