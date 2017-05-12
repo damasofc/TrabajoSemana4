@@ -34,7 +34,7 @@ public class BlockBuster {
     public void agregarItem(int codigo, String nombre, int tipo){
             if(buscarItem(codigo, tipo) == null){
                 if(tipo == 1 || tipo == 2){
-                    if(tipo == 1){
+                    if(tipo == movie){
                         System.out.print("Porfavor ingrese el precio de renta de la pelicua: ");
                         int prec = sc.nextInt();
                         BlockBusterItem nw = new MovieItem(nombre, codigo,prec);
