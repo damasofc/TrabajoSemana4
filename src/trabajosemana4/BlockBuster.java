@@ -66,19 +66,43 @@ public class BlockBuster {
             System.out.println("Item no existente");
         }
     }
-    
-    public void auditarMovieEstados(int n){
-       if(arr.size() == n){
+    private int contador = 0;
+    public void auditarMovieEstados(){
+       if(arr.size() == contador){
            System.out.println("Termino de auditar");
+           contador = 0;
        }
        else{
-           if(arr.get(n).getClass().getName().equals("trabajosemana4.MovieItem")){
-               MovieItem mi = (MovieItem) arr.get(n);
+           if(arr.get(contador).getClass().getName().equals("trabajosemana4.MovieItem")){
+               MovieItem mi = (MovieItem) arr.get(contador);
                mi.reEvaluarEstado();
            }
-           auditarMovieEstados(n +1);
+           contador++;
+           auditarMovieEstados();
        }
-   }
+    }
+    
+    private int cantidad = 0;
+    public void list(int tipo){
+        if(arr.size() == contador){
+            System.out.println("Hay "+cantidad+" items");
+           System.out.println("***********************************");
+           contador = 0;
+           cantidad = 0;
+       }
+       else{
+           if(tipo == movie && arr.get(contador).getClass().getName().equals("trabajosemana4.MovieItem")){
+               System.out.println(arr.get(contador).toString());
+               cantidad += 1;
+           }
+           else if(tipo == game && arr.get(contador).getClass().getName().equals("trabajosemana4.VideoGameItem")){
+               System.out.println(arr.get(contador).toString());
+               cantidad+= 1;
+           }
+           contador++;
+            list(tipo);
+       }
+    }
 }
 
 
